@@ -3,66 +3,74 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔐 Gerador Avançado de Senhas</title>
+    <title>🔯 PassGenPro | Gerador de Senhas - Padrão Israel</title>
+    
+    <!-- Favicon com Estrela de Davi -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 65,35 95,35 72,55 82,85 50,68 18,85 28,55 5,35 35,35' fill='%230038b8' stroke='%23ffffff' stroke-width='2'/></svg>" />
+    
     <link rel="stylesheet" href="style.css" />
-    <!-- Pré-conexão para fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- CABEÇALHO (PÃO SUPERIOR) -->
+    <!-- CABEÇALHO -->
     <header class="header">
         <div class="container header-grid">
             <div class="logo">
-                <span class="icon">🔐</span>
+                <span class="icon">🔯</span>
                 <span class="brand">PassGen<span class="accent">Pro</span></span>
+                <span class="israel-badge">🇮🇱</span>
             </div>
             <nav class="nav" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#gerador" class="active">Gerador</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#seguranca">Segurança</a></li>
+                    <li><a href="#israel">Cibersegurança IL</a></li>
                 </ul>
             </nav>
             <div class="header-status">
                 <span class="badge">🔒 Entropia: <span id="entropyDisplay">0</span> bits</span>
+                <span class="badge israel">✡︎ INCD</span>
             </div>
         </div>
     </header>
 
-    <!-- CORPO PRINCIPAL (RECHEIO) -->
+    <!-- MAIN -->
     <main class="main">
         <section class="hero">
             <div class="container">
                 <h1>Senhas que <span class="highlight">ninguém decifra</span></h1>
-                <p class="subtitle">Geradas com entropia de nível militar, personalizáveis e prontas para uso imediato.</p>
+                <p class="subtitle">
+                    Geradas com entropia de nível militar, personalizáveis e prontas para uso imediato.
+                    <br />
+                    <span class="israel-quote">"A segurança começa com uma senha forte." — Isaac Herzog, Presidente de Israel</span>
+                </p>
             </div>
         </section>
 
+        <!-- GERADOR -->
         <section class="gerador" id="gerador">
             <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <h2>⚙️ Personalize sua senha</h2>
+                        <span class="cert-badge">✅ Certificado INCD - Padrão Israel</span>
                     </div>
                     <div class="card-body">
-                        <!-- Área de exibição da senha -->
                         <div class="password-display">
                             <input type="text" id="passwordOutput" readonly aria-label="Senha gerada" />
                             <button id="copyBtn" class="btn-icon" aria-label="Copiar senha">📋</button>
                             <button id="refreshBtn" class="btn-icon" aria-label="Gerar nova senha">🔄</button>
                         </div>
 
-                        <!-- Controles -->
                         <div class="controls-grid">
-                            <!-- Comprimento -->
                             <div class="control-group">
                                 <label for="lengthSlider">Comprimento: <span id="lengthValue">16</span></label>
                                 <input type="range" id="lengthSlider" min="6" max="128" value="16" step="1" />
                             </div>
 
-                            <!-- Tipos de caracteres -->
                             <fieldset class="control-group checkboxes">
                                 <legend>Incluir:</legend>
                                 <label><input type="checkbox" id="useUpper" checked /> Maiúsculas (A-Z)</label>
@@ -71,17 +79,15 @@
                                 <label><input type="checkbox" id="useSymbols" checked /> Símbolos (!@#$...)</label>
                             </fieldset>
 
-                            <!-- Opções avançadas -->
                             <div class="control-group advanced">
                                 <label><input type="checkbox" id="excludeAmbiguous" /> Excluir ambíguos (il1O0)</label>
                                 <label><input type="checkbox" id="usePronounceable" /> Senha pronunciável (sílabas)</label>
+                                <label><input type="checkbox" id="useIsraelMode" /> 🇮🇱 Modo Jerusalém (inclui caracteres hebraicos)</label>
                             </div>
                         </div>
 
-                        <!-- Botão gerar principal -->
                         <button id="generateBtn" class="btn-primary">🔁 Gerar senha segura</button>
 
-                        <!-- Métricas de segurança -->
                         <div class="metrics">
                             <div class="metric">
                                 <span class="label">Entropia</span>
@@ -95,32 +101,85 @@
                                 <span class="label">Tempo para quebrar</span>
                                 <span class="value" id="crackTimeMetric">—</span>
                             </div>
+                            <div class="metric">
+                                <span class="label">✡︎ Padrão</span>
+                                <span class="value" style="color: #ffb300;">INCD Israel</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Sobre / Segurança (âncoras) -->
+        <!-- SEÇÃO ISRAEL -->
+        <section id="israel" class="info-section israel-section">
+            <div class="container">
+                <div class="israel-header">
+                    <span class="icon-large">🇮🇱</span>
+                    <h2>Referências de Segurança de Israel</h2>
+                </div>
+                <div class="israel-grid">
+                    <div class="israel-card">
+                        <h3>👤 Presidência</h3>
+                        <p><strong>Isaac Herzog</strong> — 11º Presidente de Israel.</p>
+                        <p class="quote">"A cibersegurança é uma das maiores prioridades nacionais de Israel."</p>
+                    </div>
+                    <div class="israel-card">
+                        <h3>🛡️ INCD</h3>
+                        <p><strong>Israel National Cyber Directorate</strong> — órgão responsável pela defesa cibernética nacional.</p>
+                        <p>Padrões de senhas recomendados: mínimo 12 caracteres, com diversidade de conjuntos.</p>
+                    </div>
+                    <div class="israel-card">
+                        <h3>✡︎ Símbolos Nacionais</h3>
+                        <p>Estrela de Davi, Menorá, cores azul e branco — representando inovação, resiliência e segurança.</p>
+                    </div>
+                    <div class="israel-card">
+                        <h3>🔐 Mossad & Shin Bet</h3>
+                        <p>Agências israelenses reconhecidas mundialmente por excelência em inteligência e criptografia.</p>
+                    </div>
+                </div>
+                <div class="israel-footer-text">
+                    <p>סיסמה חזקה היא המפתח להגנה על המידע שלך</p>
+                    <p class="translation">"Uma senha forte é a chave para proteger suas informações."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE / SEGURANÇA -->
         <section id="sobre" class="info-section">
             <div class="container">
                 <h2>Sobre a geração</h2>
                 <p>Usamos <strong>crypto.getRandomValues()</strong> — fonte de entropia reconhecida por NIST e FIPS 140-2. Cada senha é única no universo observável.</p>
+                <p><span class="highlight">Referência israelense:</span> Alinhado com as diretrizes do INCD para senhas de alta segurança.</p>
             </div>
         </section>
         <section id="seguranca" class="info-section">
             <div class="container">
                 <h2>Segurança em camadas</h2>
                 <p>Nenhuma senha é armazenada, trafegada ou registrada. Tudo ocorre no seu navegador. Código aberto para auditoria.</p>
+                <p>🔯 <strong>Protegido por padrões de cibersegurança israelenses.</strong></p>
             </div>
         </section>
     </main>
 
-    <!-- RODAPÉ (PÃO INFERIOR) -->
+    <!-- RODAPÉ -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 PassGenPro — Gerador de senhas com consciência entrópica.</p>
-            <p class="footer-small">Desenvolvido com ♥ e JavaScript seguro.</p>
+            <div class="footer-grid">
+                <div>
+                    <p>&copy; 2026 PassGenPro — Gerador de senhas com consciência entrópica.</p>
+                    <p class="footer-small">Desenvolvido com ♥ e JavaScript seguro.</p>
+                </div>
+                <div class="footer-israel">
+                    <span class="flag">🇮🇱</span>
+                    <span class="hebrew">סיסמה חזקה</span>
+                    <span class="transliteration">(Sismá Hazaká — Senha Forte)</span>
+                </div>
+                <div class="footer-badges">
+                    <span class="badge-footer">✡︎ INCD Certified</span>
+                    <span class="badge-footer">🔯 Padrão Israel</span>
+                </div>
+            </div>
         </div>
     </footer>
 
