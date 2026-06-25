@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔐 Gerador Avançado de Senhas</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Pré-conexão para fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- CABEÇALHO (PÃO SUPERIOR) -->
+    <header class="header">
+        <div class="container header-grid">
+            <div class="logo">
+                <span class="icon">🔐</span>
+                <span class="brand">PassGen<span class="accent">Pro</span></span>
+            </div>
+            <nav class="nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#gerador" class="active">Gerador</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#seguranca">Segurança</a></li>
+                </ul>
+            </nav>
+            <div class="header-status">
+                <span class="badge">🔒 Entropia: <span id="entropyDisplay">0</span> bits</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CORPO PRINCIPAL (RECHEIO) -->
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Senhas que <span class="highlight">ninguém decifra</span></h1>
+                <p class="subtitle">Geradas com entropia de nível militar, personalizáveis e prontas para uso imediato.</p>
+            </div>
+        </section>
+
+        <section class="gerador" id="gerador">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>⚙️ Personalize sua senha</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Área de exibição da senha -->
+                        <div class="password-display">
+                            <input type="text" id="passwordOutput" readonly aria-label="Senha gerada" />
+                            <button id="copyBtn" class="btn-icon" aria-label="Copiar senha">📋</button>
+                            <button id="refreshBtn" class="btn-icon" aria-label="Gerar nova senha">🔄</button>
+                        </div>
+
+                        <!-- Controles -->
+                        <div class="controls-grid">
+                            <!-- Comprimento -->
+                            <div class="control-group">
+                                <label for="lengthSlider">Comprimento: <span id="lengthValue">16</span></label>
+                                <input type="range" id="lengthSlider" min="6" max="128" value="16" step="1" />
+                            </div>
+
+                            <!-- Tipos de caracteres -->
+                            <fieldset class="control-group checkboxes">
+                                <legend>Incluir:</legend>
+                                <label><input type="checkbox" id="useUpper" checked /> Maiúsculas (A-Z)</label>
+                                <label><input type="checkbox" id="useLower" checked /> Minúsculas (a-z)</label>
+                                <label><input type="checkbox" id="useNumbers" checked /> Números (0-9)</label>
+                                <label><input type="checkbox" id="useSymbols" checked /> Símbolos (!@#$...)</label>
+                            </fieldset>
+
+                            <!-- Opções avançadas -->
+                            <div class="control-group advanced">
+                                <label><input type="checkbox" id="excludeAmbiguous" /> Excluir ambíguos (il1O0)</label>
+                                <label><input type="checkbox" id="usePronounceable" /> Senha pronunciável (sílabas)</label>
+                            </div>
+                        </div>
+
+                        <!-- Botão gerar principal -->
+                        <button id="generateBtn" class="btn-primary">🔁 Gerar senha segura</button>
+
+                        <!-- Métricas de segurança -->
+                        <div class="metrics">
+                            <div class="metric">
+                                <span class="label">Entropia</span>
+                                <span class="value" id="entropyMetric">0 bits</span>
+                            </div>
+                            <div class="metric">
+                                <span class="label">Força</span>
+                                <span class="value" id="strengthMetric">—</span>
+                            </div>
+                            <div class="metric">
+                                <span class="label">Tempo para quebrar</span>
+                                <span class="value" id="crackTimeMetric">—</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre / Segurança (âncoras) -->
+        <section id="sobre" class="info-section">
+            <div class="container">
+                <h2>Sobre a geração</h2>
+                <p>Usamos <strong>crypto.getRandomValues()</strong> — fonte de entropia reconhecida por NIST e FIPS 140-2. Cada senha é única no universo observável.</p>
+            </div>
+        </section>
+        <section id="seguranca" class="info-section">
+            <div class="container">
+                <h2>Segurança em camadas</h2>
+                <p>Nenhuma senha é armazenada, trafegada ou registrada. Tudo ocorre no seu navegador. Código aberto para auditoria.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ (PÃO INFERIOR) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 PassGenPro — Gerador de senhas com consciência entrópica.</p>
+            <p class="footer-small">Desenvolvido com ♥ e JavaScript seguro.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
